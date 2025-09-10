@@ -42,9 +42,8 @@ def listar():
         }
         guests.append(conv)
 
-    #return jsonify(guests), 200
-    return "<h1>Hello world</h1>", 500
-
+    return jsonify(guests), 200
+    
 
 if __name__ == "__main__":
     app.run(debug=True, port=8080)
