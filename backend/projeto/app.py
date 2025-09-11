@@ -43,6 +43,13 @@ def listar():
         guests.append(conv)
 
     return jsonify(guests), 200
+
+@app.route('/excluir/<int:id>')
+def excluir(id):
+    if metodo.excluir(id):
+        return jsonify({"mensagem": "removido"}),200
+    
+    return jsonify({"mensagem": "erro"}), 400
     
 
 if __name__ == "__main__":

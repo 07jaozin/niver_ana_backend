@@ -15,5 +15,14 @@ class ConvidadoController:
           todos = Convidado.query.all()
 
           return todos
+     
+     @staticmethod
+     def excluir(id):
+          user = Convidado.query.filter_by(id = id).first()
+
+          db.session.delete(user)
+          db.session.commit()
+
+          return True
           
 
