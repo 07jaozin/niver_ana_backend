@@ -44,8 +44,9 @@ def listar():
 
     return jsonify(guests), 200
 
-@app.route('/excluir/<int:id>', methods = ['POST'])
-def excluir(id):
+@app.route('/excluir', methods = ['POST'])
+def excluir():
+    id = request.get_json()
     if metodo.excluir(id):
         return jsonify({"mensagem": "removido"}),200
     
